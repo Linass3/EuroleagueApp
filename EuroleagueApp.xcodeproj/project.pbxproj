@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		81DB32572CEB2E36004DC2E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81DB32392CEB2E35004DC2E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81DB32402CEB2E35004DC2E0;
+			remoteInfo = EuroleagueApp;
+		};
+		81DB32612CEB2E36004DC2E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81DB32392CEB2E35004DC2E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81DB32402CEB2E35004DC2E0;
+			remoteInfo = EuroleagueApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroleagueApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EuroleagueAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EuroleagueAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		81DB32432CEB2E35004DC2E0 /* EuroleagueApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EuroleagueApp;
+			sourceTree = "<group>";
+		};
+		81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EuroleagueAppTests;
+			sourceTree = "<group>";
+		};
+		81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EuroleagueAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81DB323E2CEB2E35004DC2E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB32532CEB2E36004DC2E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB325D2CEB2E36004DC2E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81DB32382CEB2E35004DC2E0 = {
+			isa = PBXGroup;
+			children = (
+				81DB32432CEB2E35004DC2E0 /* EuroleagueApp */,
+				81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */,
+				81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */,
+				81DB32422CEB2E35004DC2E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81DB32422CEB2E35004DC2E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */,
+				81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */,
+				81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81DB32402CEB2E35004DC2E0 /* EuroleagueApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81DB326A2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueApp" */;
+			buildPhases = (
+				81DB323D2CEB2E35004DC2E0 /* Sources */,
+				81DB323E2CEB2E35004DC2E0 /* Frameworks */,
+				81DB323F2CEB2E35004DC2E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				81DB32432CEB2E35004DC2E0 /* EuroleagueApp */,
+			);
+			name = EuroleagueApp;
+			packageProductDependencies = (
+			);
+			productName = EuroleagueApp;
+			productReference = 81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81DB32552CEB2E36004DC2E0 /* EuroleagueAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81DB326D2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppTests" */;
+			buildPhases = (
+				81DB32522CEB2E36004DC2E0 /* Sources */,
+				81DB32532CEB2E36004DC2E0 /* Frameworks */,
+				81DB32542CEB2E36004DC2E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81DB32582CEB2E36004DC2E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */,
+			);
+			name = EuroleagueAppTests;
+			packageProductDependencies = (
+			);
+			productName = EuroleagueAppTests;
+			productReference = 81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		81DB325F2CEB2E36004DC2E0 /* EuroleagueAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81DB32702CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppUITests" */;
+			buildPhases = (
+				81DB325C2CEB2E36004DC2E0 /* Sources */,
+				81DB325D2CEB2E36004DC2E0 /* Frameworks */,
+				81DB325E2CEB2E36004DC2E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81DB32622CEB2E36004DC2E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */,
+			);
+			name = EuroleagueAppUITests;
+			packageProductDependencies = (
+			);
+			productName = EuroleagueAppUITests;
+			productReference = 81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81DB32392CEB2E35004DC2E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					81DB32402CEB2E35004DC2E0 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					81DB32552CEB2E36004DC2E0 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 81DB32402CEB2E35004DC2E0;
+					};
+					81DB325F2CEB2E36004DC2E0 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 81DB32402CEB2E35004DC2E0;
+					};
+				};
+			};
+			buildConfigurationList = 81DB323C2CEB2E35004DC2E0 /* Build configuration list for PBXProject "EuroleagueApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81DB32382CEB2E35004DC2E0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 81DB32422CEB2E35004DC2E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81DB32402CEB2E35004DC2E0 /* EuroleagueApp */,
+				81DB32552CEB2E36004DC2E0 /* EuroleagueAppTests */,
+				81DB325F2CEB2E36004DC2E0 /* EuroleagueAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81DB323F2CEB2E35004DC2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB32542CEB2E36004DC2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB325E2CEB2E36004DC2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81DB323D2CEB2E35004DC2E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB32522CEB2E36004DC2E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81DB325C2CEB2E36004DC2E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81DB32582CEB2E36004DC2E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81DB32402CEB2E35004DC2E0 /* EuroleagueApp */;
+			targetProxy = 81DB32572CEB2E36004DC2E0 /* PBXContainerItemProxy */;
+		};
+		81DB32622CEB2E36004DC2E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81DB32402CEB2E35004DC2E0 /* EuroleagueApp */;
+			targetProxy = 81DB32612CEB2E36004DC2E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		81DB32682CEB2E36004DC2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		81DB32692CEB2E36004DC2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81DB326B2CEB2E36004DC2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EuroleagueApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81DB326C2CEB2E36004DC2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EuroleagueApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		81DB326E2CEB2E36004DC2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EuroleagueApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EuroleagueApp";
+			};
+			name = Debug;
+		};
+		81DB326F2CEB2E36004DC2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EuroleagueApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EuroleagueApp";
+			};
+			name = Release;
+		};
+		81DB32712CEB2E36004DC2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EuroleagueApp;
+			};
+			name = Debug;
+		};
+		81DB32722CEB2E36004DC2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EuroleagueApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81DB323C2CEB2E35004DC2E0 /* Build configuration list for PBXProject "EuroleagueApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81DB32682CEB2E36004DC2E0 /* Debug */,
+				81DB32692CEB2E36004DC2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81DB326A2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81DB326B2CEB2E36004DC2E0 /* Debug */,
+				81DB326C2CEB2E36004DC2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81DB326D2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81DB326E2CEB2E36004DC2E0 /* Debug */,
+				81DB326F2CEB2E36004DC2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81DB32702CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81DB32712CEB2E36004DC2E0 /* Debug */,
+				81DB32722CEB2E36004DC2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81DB32392CEB2E35004DC2E0 /* Project object */;
+}
