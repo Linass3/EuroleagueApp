@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24A348" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName=".Game" syncable="YES">
+        <attribute name="date" attributeType="String"/>
+        <attribute name="opponent" attributeType="String"/>
+        <attribute name="team" attributeType="String"/>
+    </entity>
+    <entity name="Player" representedClassName=".Player" syncable="YES">
+        <attribute name="birthDate" attributeType="String"/>
+        <attribute name="clubCode" attributeType="String"/>
+        <attribute name="country" attributeType="String"/>
+        <attribute name="height" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="lastTeam" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="number" attributeType="String"/>
+        <attribute name="position" attributeType="String"/>
+        <attribute name="weight" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Team" representedClassName=".Team" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="code" attributeType="String"/>
+        <attribute name="image" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="code"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
