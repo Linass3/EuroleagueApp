@@ -114,10 +114,7 @@ struct PlayerDetailsView: View {
 // MARK: - Preview
 
 #Preview {
-    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
-        PreviewDataStack.shared.mockContext
-    }
-    let context = SwinjectUtility.forceResolve(NSManagedObjectContext.self)
+    let context = PreviewDataStack.shared.mockContext
     let newPlayer = Player(context: context)
     newPlayer.name = "Test name"
     newPlayer.image = "https://picsum.photos/1000"

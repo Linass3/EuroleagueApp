@@ -53,10 +53,7 @@ struct GameListItem: View {
 // MARK: - Preview
 
 #Preview {
-    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
-        PreviewDataStack.shared.mockContext
-    }
-    let context = SwinjectUtility.forceResolve(NSManagedObjectContext.self)
+    let context = PreviewDataStack.shared.mockContext
     let newGame = Game(context: context)
     newGame.date = "2024-06-29T00:00:00"
     newGame.team = "Team 1"

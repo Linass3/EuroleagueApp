@@ -49,10 +49,7 @@ struct TeamListItem: View {
 // MARK: - Preview
 
 #Preview {
-    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
-        PreviewDataStack.shared.mockContext
-    }
-    let context = SwinjectUtility.forceResolve(NSManagedObjectContext.self)
+    let context = PreviewDataStack.shared.mockContext
     let newTeam = Team(context: context)
     newTeam.name = "Test team"
     newTeam.image = "https://picsum.photos/200"

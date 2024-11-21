@@ -95,8 +95,5 @@ struct TeamListView: View {
 // MARK: - Preview
 
 #Preview {
-    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
-        PreviewDataStack.shared.mockContext
-    }
     return TeamListView(viewModel: DefaultTeamListViewModel())
 }

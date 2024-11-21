@@ -21,7 +21,19 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
     private(set) var team: Team
     private(set) var gamesList: [Game] = []
     private(set) var playersList: [Player] = []
-    @Published var playerSearchResults: [Player] = []
+    @Published var searchQuery = ""
+    var filtererPlayerList: [Player] {
+        if !searchQuery.isEmpty {
+            return playersList
+                .filter({
+                    $0.name.lowercased().contains(searchQuery.lowercased()) ||
+                    $0.position.lowercased().contains(searchQuery.lowercased()) ||
+                    $0.country.lowercased().contains(searchQuery.lowercased())
+                })
+        } else {
+            return playersList
+        }
+    }
     private var euroleagueDataClient: EuroleagueDataClient
     private var context: NSManagedObjectContext
     
@@ -143,13 +155,6 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
     }
     
     func filter(_ searchText: String) {
-        if !searchText.isEmpty {
-            playerSearchResults = playersList
-                .filter({
-                    $0.name.lowercased().contains(searchText.lowercased()) ||
-                    $0.position.lowercased().contains(searchText.lowercased()) ||
-                    $0.country.lowercased().contains(searchText.lowercased())
-                })
-        }
+
     }
 }

@@ -13,14 +13,12 @@ struct TeamDetailsView: View {
         static let searchBarIcon = "magnifyingglass"
         static let searchBarPlaceholder = "Search by name, position or country"
         static let searchBarClearIcon = "xmark.circle.fill"
-        static let emptyString = ""
     }
     
     // MARK: - Properties
     
     @StateObject private var viewModel: DefaultTeamDetailsViewModel
     @State private var selectedView = 0
-    @State private var searchQuery = Constants.emptyString
 
     init(viewModel: @autoclosure @escaping () -> DefaultTeamDetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel())
@@ -117,13 +115,10 @@ struct TeamDetailsView: View {
                     .foregroundColor(.gray)
                     .padding(.leading, 10)
                 
-                TextField(Constants.searchBarPlaceholder, text: $searchQuery)
+                TextField(Constants.searchBarPlaceholder, text: $viewModel.searchQuery)
                     .frame(maxWidth: .infinity)
-                    .onChange(of: searchQuery) {
-                        viewModel.filter(searchQuery)
-                    }
                 
-                if !searchQuery.isEmpty {
+                if !viewModel.searchQuery.isEmpty {
                     Button(action: resetSearchQuery) {
                         Image(systemName: Constants.searchBarClearIcon)
                             .foregroundColor(.gray)
@@ -136,42 +131,27 @@ struct TeamDetailsView: View {
             .cornerRadius(10)
             .padding(.horizontal, 20)
             
-            if searchQuery.isEmpty {
-                List(viewModel.playersList, id: \.objectID) { player in
-                    NavigationLink(destination: PlayerDetailsView(viewModel: DefaultPlayerDetailsViewModel(player: player))) {
-                        PlayerListItem(player: player)
-                    }
-                    .frame(height: 50)
-                    .padding(.horizontal, 20)
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            List(viewModel.filtererPlayerList, id: \.objectID) { player in
+                NavigationLink(destination: PlayerDetailsView(viewModel: DefaultPlayerDetailsViewModel(player: player))) {
+                    PlayerListItem(player: player)
                 }
-                .listStyle(PlainListStyle())
-            } else {
-                List(viewModel.playerSearchResults, id: \.objectID) { player in
-                    NavigationLink(destination: PlayerDetailsView(viewModel: DefaultPlayerDetailsViewModel(player: player))) {
-                        PlayerListItem(player: player)
-                    }
-                    .frame(height: 50)
-                    .padding(.horizontal, 20)
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                }
-                .listStyle(PlainListStyle())
+                .frame(height: 50)
+                .padding(.horizontal, 20)
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
+            .listStyle(PlainListStyle())
         }
     }
     
     private func resetSearchQuery() {
-        searchQuery.removeAll()
+        viewModel.searchQuery.removeAll()
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
-        PreviewDataStack.shared.mockContext
-    }
-    let context = SwinjectUtility.forceResolve(NSManagedObjectContext.self)
+    let context = PreviewDataStack.shared.mockContext
     let newTeam = Team(context: context)
     newTeam.name = "Zalgiris Kaunas"
     newTeam.image = "https://picsum.photos/1000"
