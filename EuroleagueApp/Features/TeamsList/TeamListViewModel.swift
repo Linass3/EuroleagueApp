@@ -51,8 +51,6 @@ final class DefaultTeamListViewModel: TeamListViewModel, ObservableObject {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.team.cofigurationKey)
-            
-            try await Task.sleep(nanoseconds: 500_000_000)
         } catch {
             print("Error fetching teams data from API or saving to CoreData: \(error)")
         }

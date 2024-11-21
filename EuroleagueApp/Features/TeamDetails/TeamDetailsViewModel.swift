@@ -9,7 +9,6 @@ protocol TeamDetailsViewModel {
     
     func checkGamesData(forceUpdate: Bool) async
     func checkData() async
-    func filter(_ searchText: String)
 }
 
 @MainActor
@@ -56,8 +55,6 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.game(code: team.code).cofigurationKey)
-            
-            try await Task.sleep(nanoseconds: 300_000_000)
         } catch {
             print("Error fetching games data from API or saving to CoreData: \(error)")
         }
@@ -111,8 +108,6 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.player(code: team.code).cofigurationKey)
-            
-            try await Task.sleep(nanoseconds: 300_000_000)
         } catch {
             print("Error fetching players data from API or saving to CoreData: \(error)")
         }
@@ -152,9 +147,5 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
         await checkGamesData(forceUpdate: false)
         await checkPlayersData()
         isUpdating = false
-    }
-    
-    func filter(_ searchText: String) {
-
     }
 }
