@@ -7,19 +7,21 @@ protocol TeamDetailsViewModel {
     var playersList: [Player] { get }
     var team: Team { get }
     
-    mutating func checkGamesData(forceUpdate: Bool) async
-    mutating func checkPlayersData() async
-    func gamesNeedUpdate() -> Bool
-    func playersNeedUpdate() -> Bool
+    func checkGamesData(forceUpdate: Bool) async
+    func checkData() async
+    func filter(_ searchText: String)
 }
 
-struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
+@MainActor
+class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
 
     // MARK: - Properties
     
+    @Published var isUpdating = false
     private(set) var team: Team
     private(set) var gamesList: [Game] = []
     private(set) var playersList: [Player] = []
+    @Published var playerSearchResults: [Player] = []
     private var euroleagueDataClient: EuroleagueDataClient
     private var context: NSManagedObjectContext
     
@@ -42,12 +44,14 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.game(code: team.code).cofigurationKey)
+            
+            try await Task.sleep(nanoseconds: 300_000_000)
         } catch {
             print("Error fetching games data from API or saving to CoreData: \(error)")
         }
     }
     
-    mutating private func fetchGamesDataFromCoreData() {
+    private func fetchGamesDataFromCoreData() {
         do {
             let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "team == %@ OR opponent == %@", team.name, team.name)
@@ -60,7 +64,7 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
         gamesList.sort { $0.date < $1.date }
     }
     
-    func gamesNeedUpdate() -> Bool {
+    private func gamesNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.game(code: team.code).cofigurationKey) as? Date
         guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.game(code: team.code).timeInterval else {
             return true
@@ -68,7 +72,7 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
         return false
     }
     
-    mutating func checkGamesData(forceUpdate: Bool) async {
+    func checkGamesData(forceUpdate: Bool) async {
         if gamesNeedUpdate() || forceUpdate {
             await saveGamesDataFromAPI()
         }
@@ -95,12 +99,14 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.player(code: team.code).cofigurationKey)
+            
+            try await Task.sleep(nanoseconds: 300_000_000)
         } catch {
             print("Error fetching players data from API or saving to CoreData: \(error)")
         }
     }
     
-    mutating private func fetchPlayersDataFromCoreData() {
+    private func fetchPlayersDataFromCoreData() {
         do {
             let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "clubCode == %@", team.code)
@@ -112,7 +118,7 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
         }
     }
     
-    func playersNeedUpdate() -> Bool {
+    private func playersNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.player(code: team.code).cofigurationKey) as? Date
         guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.player(code: team.code).timeInterval else {
             return true
@@ -120,10 +126,30 @@ struct DefaultTeamDetailsViewModel: TeamDetailsViewModel {
         return false
     }
     
-    mutating func checkPlayersData() async {
+    private func checkPlayersData() async {
         if playersNeedUpdate() {
             await savePlayersDataFromAPI()
         }
         fetchPlayersDataFromCoreData()
+    }
+    
+    // MARK: - Games and Players Data Methods
+    
+    func checkData() async {
+        isUpdating = true
+        await checkGamesData(forceUpdate: false)
+        await checkPlayersData()
+        isUpdating = false
+    }
+    
+    func filter(_ searchText: String) {
+        if !searchText.isEmpty {
+            playerSearchResults = playersList
+                .filter({
+                    $0.name.lowercased().contains(searchText.lowercased()) ||
+                    $0.position.lowercased().contains(searchText.lowercased()) ||
+                    $0.country.lowercased().contains(searchText.lowercased())
+                })
+        }
     }
 }

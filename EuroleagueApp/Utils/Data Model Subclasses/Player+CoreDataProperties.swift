@@ -32,5 +32,4 @@ extension Player {
             return 0
         }
     }
-
 }

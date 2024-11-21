@@ -6,7 +6,6 @@ protocol TeamListViewModel {
     var teamsList: [Team] { get }
     
     func checkTeamsData() async
-    func teamsNeedUpdate() -> Bool
 }
 
 @MainActor
@@ -14,8 +13,22 @@ final class DefaultTeamListViewModel: TeamListViewModel, ObservableObject {
     
     // MARK: - Properties
     
-    @Published var isUpdating = false
-    var teamsList: [Team] = []
+    enum SelectedView {
+        case list
+        case grid
+        
+        var label: String {
+            switch self {
+            case .list:
+                return "Grid"
+            case .grid:
+                return "List"
+            }
+        }
+    }
+    @Published private(set) var isTeamsUpdating = false
+    @Published private(set) var viewSelector: SelectedView = .list
+    private(set) var teamsList: [Team] = []
     private var euroleagueDataClient: EuroleagueDataClient
     private var context: NSManagedObjectContext
     
@@ -38,6 +51,8 @@ final class DefaultTeamListViewModel: TeamListViewModel, ObservableObject {
             }
             try context.save()
             UserDefaults.standard.set(Date(), forKey: UpdateTime.team.cofigurationKey)
+            
+            try await Task.sleep(nanoseconds: 500_000_000)
         } catch {
             print("Error fetching teams data from API or saving to CoreData: \(error)")
         }
@@ -53,27 +68,31 @@ final class DefaultTeamListViewModel: TeamListViewModel, ObservableObject {
         }
     }
     
-    // MARK: - Methods
-    
-    func checkTeamsData() async {
-        isUpdating = true
-        if teamsNeedUpdate() {
-            await saveTeamsDataFromAPI()
-        }
-        fetchTeamsDataFromCoreData()
-        do {
-            try await Task.sleep(nanoseconds: UInt64(1 * Double(NSEC_PER_SEC)))
-        } catch {
-            
-        }
-        isUpdating = false
-    }
-    
-    func teamsNeedUpdate() -> Bool {
+    private func teamsNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.team.cofigurationKey) as? Date
         guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.team.timeInterval else {
             return true
         }
         return false
+    }
+    
+    // MARK: - Methods
+    
+    func checkTeamsData() async {
+        isTeamsUpdating = true
+        if teamsNeedUpdate() {
+            await saveTeamsDataFromAPI()
+        }
+        fetchTeamsDataFromCoreData()
+        isTeamsUpdating = false
+    }
+
+    func changeView() {
+        switch viewSelector {
+        case .list:
+            viewSelector = .grid
+        case .grid:
+            viewSelector = .list
+        }
     }
 }

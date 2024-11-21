@@ -1,0 +1,14 @@
+excluded:
+  - Carthage
+  - Pods
+line_length:
+  - 500 # warning
+  - 750 # error
+file_length:
+  - 500
+  - 750
+function_body_length:
+  - 60
+  - 100
+disabled_rules:
+  - trailing_whitespace

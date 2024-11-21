@@ -4,6 +4,11 @@
         <attribute name="date" attributeType="String"/>
         <attribute name="opponent" attributeType="String"/>
         <attribute name="team" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Player" representedClassName=".Player" syncable="YES">
         <attribute name="birthDate" attributeType="String"/>
@@ -16,6 +21,11 @@
         <attribute name="number" attributeType="String"/>
         <attribute name="position" attributeType="String"/>
         <attribute name="weight" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Team" representedClassName=".Team" syncable="YES">
         <attribute name="address" attributeType="String"/>

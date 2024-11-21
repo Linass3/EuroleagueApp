@@ -1,7 +1,6 @@
 import Foundation
 import CoreData
 
-
 extension Team {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Team> {
@@ -12,9 +11,5 @@ extension Team {
     @NSManaged public var code: String
     @NSManaged public var image: String
     @NSManaged public var name: String
-
-}
-
-extension Team : Identifiable {
 
 }
