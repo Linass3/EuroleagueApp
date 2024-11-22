@@ -67,10 +67,11 @@ struct TeamListView: View {
                 .opacity(0)
             }
             .listRowSeparator(.hidden)
-                    .listRowInsets(.init(top: 0,
-                         leading: 20,
-                         bottom: 0,
-                         trailing: 20))
+            .listRowInsets(.init(
+                top: 0,
+                leading: 20,
+                bottom: 0,
+                trailing: 20))
         }
         .listStyle(.plain)
     }
@@ -95,5 +96,11 @@ struct TeamListView: View {
 // MARK: - Preview
 
 #Preview {
+    SwinjectUtility.container.register(EuroleagueDataClient.self) { _ in
+        PreviewDataClient()
+    }
+    SwinjectUtility.container.register(NSManagedObjectContext.self) { _ in
+        PreviewDataStack.shared.mockContext
+    }
     return TeamListView(viewModel: DefaultTeamListViewModel())
 }

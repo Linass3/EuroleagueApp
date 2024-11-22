@@ -7,6 +7,7 @@ struct PlayerListItem: View {
 
     private enum Constants {
         static let stockPlayerImage = "stockPlayerImage"
+        static let squareImageHeight: CGFloat = 30
     }
     
     // MARK: - Properties
@@ -21,18 +22,17 @@ struct PlayerListItem: View {
                 AsyncImage(url: URL(string: player.image!)) { image in
                     image
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
-                        .clipShape(Circle())
                 } placeholder: {
                     Color.clear
-                        .frame(width: 30, height: 30)
                 }
+                .scaledToFit()
+                .frame(width: Constants.squareImageHeight, height: Constants.squareImageHeight)
+                .clipShape(Circle())
             } else {
                 Image(Constants.stockPlayerImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 30, height: 30)
+                    .frame(width: Constants.squareImageHeight, height: Constants.squareImageHeight)
                     .clipShape(Circle())
             }
             

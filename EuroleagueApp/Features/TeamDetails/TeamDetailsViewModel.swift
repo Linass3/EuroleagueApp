@@ -21,7 +21,7 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
     private(set) var gamesList: [Game] = []
     private(set) var playersList: [Player] = []
     @Published var searchQuery = ""
-    var filtererPlayerList: [Player] {
+    var filteredPlayerList: [Player] {
         if !searchQuery.isEmpty {
             return playersList
                 .filter({
@@ -75,7 +75,10 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
     
     private func gamesNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.game(code: team.code).cofigurationKey) as? Date
-        guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.game(code: team.code).timeInterval else {
+        guard
+            let lastUpdateDate,
+            abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.game(code: team.code).timeInterval
+        else {
             return true
         }
         return false
@@ -127,7 +130,10 @@ class DefaultTeamDetailsViewModel: TeamDetailsViewModel, ObservableObject {
     
     private func playersNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.player(code: team.code).cofigurationKey) as? Date
-        guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.player(code: team.code).timeInterval else {
+        guard
+            let lastUpdateDate,
+            abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.player(code: team.code).timeInterval
+        else {
             return true
         }
         return false

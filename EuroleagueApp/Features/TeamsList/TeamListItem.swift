@@ -3,6 +3,12 @@ import CoreData
 
 struct TeamListItem: View {
     
+    // MARK: - Constants
+    
+    enum Constants {
+        static let squareImageHeight: CGFloat = 30
+    }
+    
     // MARK: - Properties
     
     let team: Team
@@ -15,12 +21,11 @@ struct TeamListItem: View {
                     AsyncImage(url: URL(string: team.image)) { image in
                         image
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
                     } placeholder: {
                         Color.clear
-                            .frame(width: 30, height: 30)
                     }
+                    .scaledToFit()
+                    .frame(width: Constants.squareImageHeight, height: Constants.squareImageHeight)
 
                     Text(team.name)
                         .font(.system(size: 15, weight: .bold))
@@ -52,7 +57,7 @@ struct TeamListItem: View {
     let context = PreviewDataStack.shared.mockContext
     let newTeam = Team(context: context)
     newTeam.name = "Test team"
-    newTeam.image = "https://picsum.photos/200"
+    newTeam.image = "https://picsum.photos/1000"
     newTeam.address = "Test address"
     newTeam.code = "TEST"
     return TeamListItem(team: newTeam)

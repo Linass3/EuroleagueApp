@@ -7,6 +7,8 @@ struct GameListItem: View {
 
     private enum Constants {
         static let vsLabel = "VS"
+        static let teamLabelFontSize: CGFloat = 16
+        static let teamLabelLineLimit = 2
     }
     
     // MARK: - Properties
@@ -24,9 +26,9 @@ struct GameListItem: View {
             GeometryReader { geometry in
                 HStack(alignment: .center) {
                     Text(game.team)
-                        .font(.system(size: 16))
+                        .font(.system(size: Constants.teamLabelFontSize))
                         .frame(width: geometry.size.width * 0.45, height: 40)
-                        .lineLimit(2)
+                        .lineLimit(Constants.teamLabelLineLimit)
                         .multilineTextAlignment(.center)
                     
                     Spacer()
@@ -38,9 +40,9 @@ struct GameListItem: View {
                     Spacer()
                     
                     Text(game.opponent)
-                        .font(.system(size: 16))
+                        .font(.system(size: Constants.teamLabelFontSize))
                         .frame(width: geometry.size.width * 0.45, height: 40)
-                        .lineLimit(2)
+                        .lineLimit(Constants.teamLabelLineLimit)
                         .multilineTextAlignment(.center)
                 }
             }

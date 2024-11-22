@@ -68,7 +68,10 @@ final class DefaultTeamListViewModel: TeamListViewModel, ObservableObject {
     
     private func teamsNeedUpdate() -> Bool {
         let lastUpdateDate = UserDefaults.standard.object(forKey: UpdateTime.team.cofigurationKey) as? Date
-        guard let lastUpdateDate, abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.team.timeInterval else {
+        guard
+            let lastUpdateDate,
+            abs(lastUpdateDate.timeIntervalSinceNow) < UpdateTime.team.timeInterval
+        else {
             return true
         }
         return false

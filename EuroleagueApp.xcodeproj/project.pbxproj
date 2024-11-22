@@ -11,27 +11,8 @@
 		81DB33492CEB5AC9004DC2E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 81DB33482CEB5AC9004DC2E0 /* Alamofire */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		81DB32572CEB2E36004DC2E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81DB32392CEB2E35004DC2E0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81DB32402CEB2E35004DC2E0;
-			remoteInfo = EuroleagueApp;
-		};
-		81DB32612CEB2E36004DC2E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81DB32392CEB2E35004DC2E0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81DB32402CEB2E35004DC2E0;
-			remoteInfo = EuroleagueApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EuroleagueApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EuroleagueAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EuroleagueAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,16 +34,6 @@
 			path = EuroleagueApp;
 			sourceTree = "<group>";
 		};
-		81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EuroleagueAppTests;
-			sourceTree = "<group>";
-		};
-		81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EuroleagueAppUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,20 +46,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81DB32532CEB2E36004DC2E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81DB325D2CEB2E36004DC2E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,8 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				81DB32432CEB2E35004DC2E0 /* EuroleagueApp */,
-				81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */,
-				81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */,
 				81DB32422CEB2E35004DC2E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */,
-				81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */,
-				81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,52 +93,6 @@
 			productReference = 81DB32412CEB2E35004DC2E0 /* EuroleagueApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		81DB32552CEB2E36004DC2E0 /* EuroleagueAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81DB326D2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppTests" */;
-			buildPhases = (
-				81DB32522CEB2E36004DC2E0 /* Sources */,
-				81DB32532CEB2E36004DC2E0 /* Frameworks */,
-				81DB32542CEB2E36004DC2E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81DB32582CEB2E36004DC2E0 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				81DB32592CEB2E36004DC2E0 /* EuroleagueAppTests */,
-			);
-			name = EuroleagueAppTests;
-			packageProductDependencies = (
-			);
-			productName = EuroleagueAppTests;
-			productReference = 81DB32562CEB2E36004DC2E0 /* EuroleagueAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		81DB325F2CEB2E36004DC2E0 /* EuroleagueAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81DB32702CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppUITests" */;
-			buildPhases = (
-				81DB325C2CEB2E36004DC2E0 /* Sources */,
-				81DB325D2CEB2E36004DC2E0 /* Frameworks */,
-				81DB325E2CEB2E36004DC2E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81DB32622CEB2E36004DC2E0 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				81DB32632CEB2E36004DC2E0 /* EuroleagueAppUITests */,
-			);
-			name = EuroleagueAppUITests;
-			packageProductDependencies = (
-			);
-			productName = EuroleagueAppUITests;
-			productReference = 81DB32602CEB2E36004DC2E0 /* EuroleagueAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,14 +105,6 @@
 				TargetAttributes = {
 					81DB32402CEB2E35004DC2E0 = {
 						CreatedOnToolsVersion = 16.1;
-					};
-					81DB32552CEB2E36004DC2E0 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 81DB32402CEB2E35004DC2E0;
-					};
-					81DB325F2CEB2E36004DC2E0 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 81DB32402CEB2E35004DC2E0;
 					};
 				};
 			};
@@ -229,28 +128,12 @@
 			projectRoot = "";
 			targets = (
 				81DB32402CEB2E35004DC2E0 /* EuroleagueApp */,
-				81DB32552CEB2E36004DC2E0 /* EuroleagueAppTests */,
-				81DB325F2CEB2E36004DC2E0 /* EuroleagueAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		81DB323F2CEB2E35004DC2E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81DB32542CEB2E36004DC2E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81DB325E2CEB2E36004DC2E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,34 +173,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81DB32522CEB2E36004DC2E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81DB325C2CEB2E36004DC2E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		81DB32582CEB2E36004DC2E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81DB32402CEB2E35004DC2E0 /* EuroleagueApp */;
-			targetProxy = 81DB32572CEB2E36004DC2E0 /* PBXContainerItemProxy */;
-		};
-		81DB32622CEB2E36004DC2E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81DB32402CEB2E35004DC2E0 /* EuroleagueApp */;
-			targetProxy = 81DB32612CEB2E36004DC2E0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		81DB32682CEB2E36004DC2E0 /* Debug */ = {
@@ -507,74 +363,6 @@
 			};
 			name = Release;
 		};
-		81DB326E2CEB2E36004DC2E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EuroleagueApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EuroleagueApp";
-			};
-			name = Debug;
-		};
-		81DB326F2CEB2E36004DC2E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EuroleagueApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EuroleagueApp";
-			};
-			name = Release;
-		};
-		81DB32712CEB2E36004DC2E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EuroleagueApp;
-			};
-			name = Debug;
-		};
-		81DB32722CEB2E36004DC2E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.twoday.EuroleagueAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EuroleagueApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,24 +380,6 @@
 			buildConfigurations = (
 				81DB326B2CEB2E36004DC2E0 /* Debug */,
 				81DB326C2CEB2E36004DC2E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81DB326D2CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81DB326E2CEB2E36004DC2E0 /* Debug */,
-				81DB326F2CEB2E36004DC2E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81DB32702CEB2E36004DC2E0 /* Build configuration list for PBXNativeTarget "EuroleagueAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81DB32712CEB2E36004DC2E0 /* Debug */,
-				81DB32722CEB2E36004DC2E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

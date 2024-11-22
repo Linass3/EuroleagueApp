@@ -10,11 +10,6 @@ protocol PlayerDetailsViewModel {
     var playerNumber: String { get }
     var playerCountry: String { get }
     var playerLastTeam: String { get }
-    var playerPositionLabel: String { get }
-    var playerNumberLabel: String { get }
-    var playerCountryLabel: String { get }
-    var playerLastTeamLabel: String { get }
-    var labelCount: Int { get }
 }
 
 struct DefaultPlayerDetailsViewModel: PlayerDetailsViewModel {
@@ -50,12 +45,6 @@ struct DefaultPlayerDetailsViewModel: PlayerDetailsViewModel {
     var playerLastTeam: String {
         player.lastTeam
     }
-    
-    let playerPositionLabel = "Position"
-    let playerNumberLabel = "Jersey Number"
-    let playerCountryLabel = "Country"
-    let playerLastTeamLabel = "Last Team"
-    let labelCount = 4
     
     init(player: Player) {
         self.player = player

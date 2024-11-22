@@ -5,6 +5,11 @@ struct TeamDetailsView: View {
     
     // MARK: - Constants
 
+    private enum SelectedView {
+        case gamesList
+        case playersList
+    }
+    
     private enum Constants {
         static let navigationBarTitle = "Team"
         static let pickerTitleLabel = "Data"
@@ -13,12 +18,13 @@ struct TeamDetailsView: View {
         static let searchBarIcon = "magnifyingglass"
         static let searchBarPlaceholder = "Search by name, position or country"
         static let searchBarClearIcon = "xmark.circle.fill"
+        static let imageHeight: CGFloat = 350
     }
     
     // MARK: - Properties
     
     @StateObject private var viewModel: DefaultTeamDetailsViewModel
-    @State private var selectedView = 0
+    @State private var selectedView: SelectedView = .gamesList
 
     init(viewModel: @autoclosure @escaping () -> DefaultTeamDetailsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel())
@@ -28,43 +34,9 @@ struct TeamDetailsView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottom) {
-                AsyncImage(url: URL(string: viewModel.team.image)) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 350)
-                        .clipped()
-                } placeholder: {
-                    Color.clear
-                        .frame(height: 350)
-                }
-                
-                ZStack(alignment: .trailing) {
-                    LinearGradient(
-                        gradient: Gradient(colors: [Color.black, Color.clear]),
-                        startPoint: .bottom,
-                        endPoint: .top
-                    )
-                    .frame(height: 70)
-                    
-                    Text(viewModel.team.name)
-                        .font(.system(size: 22, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 10)
-                }
-                .frame(maxWidth: .infinity)
-            }
+            teamCardView
             
-            Picker(Constants.pickerTitleLabel, selection: $selectedView) {
-                Text(Constants.pickerSelectionLabelOne).tag(0)
-                Text(Constants.pickerSelectionLabelTwo).tag(1)
-            }
-            .pickerStyle(.segmented)
-            .padding(.leading, 60)
-            .padding(.trailing, 60)
-            .padding(.top, 10)
-            .padding(.bottom, 10)
+            segmentedControlView
 
             if viewModel.isUpdating {
                 ProgressView()
@@ -74,12 +46,10 @@ struct TeamDetailsView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 switch selectedView {
-                case 0:
+                case .gamesList:
                     gamesListView
-                case 1:
+                case .playersList:
                     playersListView
-                default:
-                    gamesListView
                 }
             }
             
@@ -93,6 +63,47 @@ struct TeamDetailsView: View {
     }
     
     // MARK: - Views
+    
+    private var teamCardView: some View {
+        ZStack(alignment: .bottom) {
+            AsyncImage(url: URL(string: viewModel.team.image)) { image in
+                image
+                    .resizable()
+            } placeholder: {
+                Color.clear
+            }
+            .scaledToFit()
+            .frame(height: Constants.imageHeight)
+            .clipped()
+            
+            ZStack(alignment: .trailing) {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.black.opacity(0.5), Color.clear]),
+                    startPoint: .bottom,
+                    endPoint: .top
+                )
+                .frame(height: 70)
+                
+                Text(viewModel.team.name)
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 10)
+            }
+            .frame(maxWidth: .infinity)
+        }
+    }
+    
+    private var segmentedControlView: some View {
+        Picker(Constants.pickerTitleLabel, selection: $selectedView) {
+            Text(Constants.pickerSelectionLabelOne).tag(SelectedView.gamesList)
+            Text(Constants.pickerSelectionLabelTwo).tag(SelectedView.playersList)
+        }
+        .pickerStyle(.segmented)
+        .padding(.leading, 60)
+        .padding(.trailing, 60)
+        .padding(.top, 10)
+        .padding(.bottom, 10)
+    }
     
     private var gamesListView: some View {
         List(viewModel.gamesList, id: \.objectID) { game in
@@ -131,7 +142,7 @@ struct TeamDetailsView: View {
             .cornerRadius(10)
             .padding(.horizontal, 20)
             
-            List(viewModel.filtererPlayerList, id: \.objectID) { player in
+            List(viewModel.filteredPlayerList, id: \.objectID) { player in
                 NavigationLink(destination: PlayerDetailsView(viewModel: DefaultPlayerDetailsViewModel(player: player))) {
                     PlayerListItem(player: player)
                 }
